@@ -8,6 +8,8 @@ const path = require("node:path");
 
 app.use(express.static('public'));
 
+app.use("/", express.Router());
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
