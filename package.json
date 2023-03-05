@@ -1,0 +1,13 @@
+{
+  "name": "ferna.my.id",
+  "version": "1.0.0",
+  "description": "Ferna Bot Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
