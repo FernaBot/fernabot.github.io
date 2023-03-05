@@ -6,16 +6,18 @@ const app = express();
 
 const path = require("node:path");
 
-app.use(express.static("assets"));
+app.use("assets", express.static(__dirname+"/assets"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
+/*
 app.get("*", (req, res) => {
     res.status(404);
     res.sendFile(path.join(__dirname, "404.html"));
 });
+*/
 
 const port = process.env.PORT || 3000;
 
