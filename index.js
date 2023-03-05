@@ -4,14 +4,16 @@ process.on("uncaughtException", (error) => console.error(error));
 const express = require("express");
 const app = express();
 
+const path = require("node:path");
+
 app.use(express.static("assets"));
 
 app.get("*", (req, res) => {
-    res.sendFile("./404.html");
+    res.sendFile(path.join(__dirname, "404.html"));
 });
 
 app.get("/", (req, res) => {
-    res.sendFile("./index.html");
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 const port = process.env.PORT || 3000;
