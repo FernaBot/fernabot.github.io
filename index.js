@@ -8,12 +8,13 @@ const path = require("node:path");
 
 app.use(express.static("assets"));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "404.html"));
-});
-
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("*", (req, res) => {
+    res.status(404);
+    res.sendFile(path.join(__dirname, "404.html"));
 });
 
 const port = process.env.PORT || 3000;
